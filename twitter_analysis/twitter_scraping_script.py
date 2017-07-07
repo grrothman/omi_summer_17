@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
+from local_config import username, password
 
 browser = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver.exe')
 browser.get('http://twitter.com')
@@ -8,8 +9,8 @@ top_bar = browser.find_element_by_css_selector(".StreamsTopBar.StreamsTopBar--fi
 tall = top_bar.find_element_by_css_selector('.StreamsHero.StreamsHero--tall')
 bc = tall.find_element_by_css_selector('.StreamsHero-buttonContainer')
 bc.find_element_by_css_selector('.Button.StreamsLogin.js-login').click()
-browser.find_element_by_xpath("//input[contains(@name,'username')]").send_keys('michellewoo567@yahoo.com')
-browser.find_element_by_xpath("//input[contains(@name,'password')]").send_keys('wmq531,,.')
+browser.find_element_by_xpath("//input[contains(@name,'username')]").send_keys(username)
+browser.find_element_by_xpath("//input[contains(@name,'password')]").send_keys(password)
 browser.find_element_by_xpath("//input[contains(@name,'password')]").send_keys(Keys.RETURN)
 
 pr = browser.find_element_by_class_name('pull-right')
