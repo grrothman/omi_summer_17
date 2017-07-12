@@ -59,36 +59,38 @@ def search(browser):
     # si = form.find_element_by_css_selector(".search-input")
 
     # Find Advanced Search
-    si.send_keys('dummy')
+    # si.send_keys('dummy')
+    # si.send_keys(Keys.RETURN)
+    # time.sleep(2)
+    # browser.find_element_by_class_name('SidebarFilterModule-toggle').click()
+    # browser.find_element_by_class_name('SidebarFilterModule-advanced').click()
+
+    # # Fill Advanced Search form - here is where critical terms are inputted!
+    # form = browser.find_element_by_css_selector('#page-container').find_element_by_css_selector('.t1-form')
+    # ands = form.find_element_by_css_selector('[name=ands]')
+    # ands.send_keys('same drugs')
+    # # phrase = form.find_element_by_css_selector('[name=phrase]')
+    # # phrase.send_keys('same drugs')
+    # ors = form.find_element_by_css_selector('[name=ors]')
+    # ors.send_keys("#samedrugs #chancetherapper #coloringbook")
+    # # nots = form.find_element_by_css_selector('[name=nots]')
+    # # tag = form.find_element_by_css_selector('[name=tag]')
+
+    # # from_acct = form.find_element_by_css_selector('[name=from]')
+    # # from_acct.send_keys('@chancetherapper')
+
+    # since = form.find_element_by_css_selector('[name=since]')
+    # since.send_keys('2016-05-13')
+    # until = form.find_element_by_css_selector('[name=until]')
+    # until.click()
+    # until.send_keys('2016-06-13')
+
+    # # Make your search happen!
+    # sb = form.find_element_by_class_name('submit')
+    # sb.click()
+
+    si.send_keys('"same drugs" #samedrugs OR #chancetherapper OR #coloringbook since:2016-05-13 until:2016-06-13')
     si.send_keys(Keys.RETURN)
-    time.sleep(2)
-    browser.find_element_by_class_name('SidebarFilterModule-toggle').click()
-    browser.find_element_by_class_name('SidebarFilterModule-advanced').click()
-
-    # Fill Advanced Search form - here is where critical terms are inputted!
-    form = browser.find_element_by_css_selector('#doc').find_element_by_css_selector('#page-outer').find_element_by_css_selector('#page-container').find_element_by_css_selector('.search.advanced-search')
-    ands = form.find_element_by_css_selector('[name=ands]')
-    ands.send_keys('same drugs')
-    # phrase = form.find_element_by_css_selector('[name=phrase]')
-    # phrase.send_keys('same drugs')
-    ors = form.find_element_by_css_selector('[name=ors]')
-    ors.send_keys("#samedrugs #chancetherapper #coloringbook")
-    # nots = form.find_element_by_css_selector('[name=nots]')
-    # tag = form.find_element_by_css_selector('[name=tag]')
-
-    # from_acct = form.find_element_by_css_selector('[name=from]')
-    # from_acct.send_keys('@chancetherapper')
-
-    since = form.find_element_by_css_selector('[name=since]')
-    since.send_keys('2016-05-13')
-    until = form.find_element_by_css_selector('[name=until]')
-    until.click()
-    until.send_keys('2016-06-13')
-
-    # Make your search happen!
-    sb = form.find_element_by_class_name('submit')
-    sb.click()
-
     time.sleep(5)
 
     return browser
